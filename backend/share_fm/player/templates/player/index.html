@@ -2,5 +2,9 @@
 {% load i18n %}
 
 {% block content %}
-    <p>what's up?</p>
+    <p>what's up?
+        <a>{% trans "Make awesome!" %}</a>
+        <a href="{% url 'socialauth_begin' 'vk-oauth' %}">{% trans "Sing UP!" %}</a>
+    - {{ user }}
+    </p>
 {% endblock content %}
