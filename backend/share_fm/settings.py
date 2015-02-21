@@ -39,6 +39,7 @@ INSTALLED_APPS = (
 
     # project apps
     'share_fm.core',
+    'share_fm.play',
 )
 
 MIDDLEWARE_CLASSES = (
