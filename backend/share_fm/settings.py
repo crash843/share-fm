@@ -42,6 +42,9 @@ INSTALLED_APPS = (
     # project apps
     'share_fm.core',
     'share_fm.player',
+
+    # apps
+    'social_auth',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -91,3 +94,33 @@ TEMPLATE_DIRS = (
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Auth
+# LOGIN_URL = '/login-form/'
+# LOGIN_REDIRECT_URL = '/logged-in/'
+# LOGIN_ERROR_URL = '/login-error/'
+SOCIAL_AUTH_CREATE_USERS = True
+LOGIN_URL = '/'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+# SOCIAL_AUTH_USER_MODEL = 'myapp.CustomUser'
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.contrib.vk.VKOAuth2Backend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+VK_APP_ID = '4794582'
+VKONTAKTE_APP_ID = VK_APP_ID
+VK_API_SECRET = '8EWpesqCgw6yfDA3zQ7r'
+VKONTAKTE_APP_SECRET = VK_API_SECRET
+VK_EXTRA_SCOPE = ['audio', 'offline', 'email']
+
+SOCIAL_AUTH_PIPELINE = (
+    'social_auth.backends.pipeline.social.social_auth_user',
+    #'social_auth.backends.pipeline.associate.associate_by_email',
+    'social_auth.backends.pipeline.user.get_username',
+    'social_auth.backends.pipeline.user.create_user',
+    'social_auth.backends.pipeline.social.associate_user',
+    'social_auth.backends.pipeline.social.load_extra_data',
+    'social_auth.backends.pipeline.user.update_user_details'
+)
