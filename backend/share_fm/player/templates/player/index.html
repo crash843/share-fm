@@ -1,10 +1,35 @@
-{% extends "base.html" %}
-{% load i18n %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Share.fm - Share your music with others</title>
+    <link rel="stylesheet" href="{% static "player/css/main.css" %}">
+    <script>
+        window.static_url = "{{ STATIC_URL }}/player/";
+    </script>
+</head>
+<body>
+<section id="header">
+    <div class="wrapper">
+        test
+    </div>
+</section>
+<section id="current-track">
+    <div class="wrapper"></div>
+</section>
 
-{% block content %}
-    <p>what's up?
-        <a>{% trans "Make awesome!" %}</a>
-        <a href="{% url 'socialauth_begin' 'vk-oauth' %}">{% trans "Sing UP!" %}</a>
-    - {{ user }}
-    </p>
-{% endblock content %}
+<section id="main">
+    <div class="wrapper">
+        <div id="playlist"></div>
+        <div id="user-playlist"></div>
+    </div>
+</section>
+
+<section id="footer">
+    <div class="wrapper"></div>
+</section>
+
+<script src="{% static "player/js/index.js" %}"></script>
+</body>
+</html>

@@ -13,6 +13,7 @@ CurrentTrack = React.createClass({
     PlaylistStore.removeListener("change", @_on_change)
 
   render: ->
+    static_url = static_url
     track = if @state.playlist.length then @state.playlist[0] else {
       "id": 1,
       "artist": "None",
@@ -23,7 +24,7 @@ CurrentTrack = React.createClass({
 
     return (
       <div className="wrapper">
-       <img className="play-button" src="img/play_button.png"/>
+       <img className="play-button" src={window.static_url + "/img/play_button.png"}/>
        <div className="info">
           <span className="title">{track.title}</span>
           <span className="artist">by {track.artist}</span>
