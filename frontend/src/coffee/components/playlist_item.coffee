@@ -11,7 +11,7 @@ Playlist = React.createClass({
     track = @props.track
 
     return (
-       <li class="playlist-item">
+       <li className="playlist-item">
           {track.artist} - {track.title} ({track.duration}s)
        </li>
     )

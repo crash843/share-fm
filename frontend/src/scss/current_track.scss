@@ -1,4 +1,35 @@
 #current-track {
   background: #161616;
-  height: 300px;
+  padding: 25px 0;
+  height: 107px;
+
+  color: white;
+
+  img {
+    float: left;
+  }
+
+  .info {
+    padding-left: 140px;
+
+    .title {
+      display: block;
+      padding-top: 5px;
+      font-size: 30px;
+    }
+
+    .artist {
+      display: block;
+      font-size: 17px;
+    }
+
+    .progress {
+      display: block;
+      height: 10px;
+      margin-top: 25px;
+      background: white;
+
+      border-radius: 5px;
+    }
+  }
 }

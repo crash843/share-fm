@@ -15,7 +15,6 @@ Playlist = React.createClass({
     PlaylistStore.removeListener("change", @_on_change)
 
   render: ->
-    console.log(@state.playlist)
     playlist_items = @state.playlist.map((track) -> <PlaylistItem key={track.id} track={track}/>)
 
     return (

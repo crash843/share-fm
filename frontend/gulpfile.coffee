@@ -51,4 +51,4 @@ gulp.task 'html', ->
     gulp.src 'src/*.html'
         .pipe gulp.dest './build'
 
-gulp.task 'default', ['coffee', 'sass', 'compress', 'html']
+gulp.task 'default', ['coffee', 'img', 'sass', 'compress', 'html']
