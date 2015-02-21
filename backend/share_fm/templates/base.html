@@ -1,8 +1,10 @@
+{% load i18n static %}
+
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Share.fm - Share your music with others</title>
+    <title>Share.fm - Share your music with others. {% block title %}{% endblock title %}</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -21,7 +23,7 @@
         <div id="user-playlist"></div>
     </div>
 </section>
-
+{% block content %}{% endblock content %}
 <section id="footer">
     <div class="wrapper"></div>
 </section>
