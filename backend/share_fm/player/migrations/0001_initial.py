@@ -49,7 +49,7 @@ class Migration(migrations.Migration):
                 ('vk_mp3_url', models.CharField(max_length=b'2000')),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('author', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
-                ('genre', models.ForeignKey(to='play.Genre')),
+                ('genre', models.ForeignKey(to='player.Genre')),
             ],
             options={
                 'abstract': False,
@@ -72,7 +72,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('created', models.DateTimeField(auto_now_add=True)),
-                ('pl_item', models.ForeignKey(to='play.PlayListItem')),
+                ('pl_item', models.ForeignKey(to='player.PlayListItem')),
                 ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
             options={
@@ -82,7 +82,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='playlist',
             name='last_processed_pl',
-            field=models.ForeignKey(to='play.UserPlayList'),
+            field=models.ForeignKey(to='player.UserPlayList'),
             preserve_default=True,
         ),
     ]

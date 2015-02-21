@@ -2,7 +2,7 @@ from django.views.generic import TemplateView, DetailView
 
 
 class PlayerIndex(TemplateView):
-    template_name = 'play/index.html'
+    template_name = 'player/index.html'
 
 player_index = PlayerIndex.as_view()
 
