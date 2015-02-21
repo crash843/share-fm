@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView, DetailView
 
-# Create your views here.
+
+class PlayerIndex(TemplateView):
+    template_name = 'play/index.html'
+
+player_index = PlayerIndex.as_view()
+
+
+class PlayerDetails(DetailView):
+    pass
+
+player_details = PlayerDetails.as_view()
