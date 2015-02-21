@@ -1,5 +1,4 @@
-module.exports =
-  playlist_tracks: [
+module.exports = [
     {
       "id": 1,
       "artist": "Oomph",
@@ -17,7 +16,7 @@ module.exports =
       "duration": 170
     },
     {
-      "id": 2,
+      "id": 3,
       "artist": "Сплин",
       "title": "Остаемся зимовать",
       "album": "25 кадр",
@@ -25,7 +24,7 @@ module.exports =
       "duration": 200
     },
     {
-      "id": 2,
+      "id": 4,
       "artist": "Tiamat",
       "title": "Vote for love",
       "album": "New album",
