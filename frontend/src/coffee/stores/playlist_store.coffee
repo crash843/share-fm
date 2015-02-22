@@ -16,7 +16,7 @@ PlaylistStore = _.extend({}, EventEmitter.prototype, {
 
 dispatcher.register((payload) ->
   switch payload.action.actionType
-    when constants.UPDATE_PLAYLIST then load_playlist(payload.action.playlist)
+    when constants.action_types.UPDATE_PLAYLIST then load_playlist(payload.action.playlist)
 
   PlaylistStore.emit("change")
   true

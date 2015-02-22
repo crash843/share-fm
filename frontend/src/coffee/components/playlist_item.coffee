@@ -1,7 +1,7 @@
 React = require("react")
 
 
-Playlist = React.createClass({
+PlaylistItem = React.createClass({
   propTypes: ->
     {
       track: ReactPropTypes.object
@@ -17,4 +17,4 @@ Playlist = React.createClass({
     )
 })
 
-module.exports = Playlist
+module.exports = PlaylistItem
