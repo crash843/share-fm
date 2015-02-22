@@ -1,18 +1,17 @@
-{% load i18n static %}
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Share.fm - Share your music with others</title>
-    <link rel="stylesheet" href="{% static "player/css/main.css" %}">
+    <link rel="stylesheet" href="css/main.css">
     <script>
-        window.static_url = "{{ STATIC_URL }}/player/";
+        window.static_url = "";
     </script>
 </head>
 <body>
 <section id="header">
     <div class="wrapper">
-        <a href="{% url 'socialauth_begin' 'vk-oauth' %}">{% trans "Sing UP!" %}</a> - {{ user }}
+        test
     </div>
 </section>
 <section id="current-track">
@@ -30,6 +29,6 @@
     <div class="wrapper"></div>
 </section>
 
-<script src="{% static "player/js/index.js" %}"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
