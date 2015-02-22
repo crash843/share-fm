@@ -24,7 +24,7 @@ CurrentTrack = React.createClass({
 
     return (
       <div className="wrapper">
-       <img className="play-button" src={window.static_url + "/img/play_button.png"}/>
+       <img className="play-button" src={window.static_url + "img/play_button.png"}/>
        <div className="info">
           <span className="title">{track.title}</span>
           <span className="artist">by {track.artist}</span>

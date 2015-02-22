@@ -4,9 +4,8 @@ from django.db import models
 
 class PlayList(models.Model):
     title = models.CharField(max_length=128, null=True, blank=True)
-    slug = models.CharField(max_length=16)
     author = models.ForeignKey(settings.AUTH_USER_MODEL)
-    last_processed_pl = models.ForeignKey('UserPlayList')
+    last_processed_pl = models.ForeignKey('UserPlayList', null=True, blank=True, related_name="+")
     created = models.DateTimeField(auto_now_add=True)
 
 
@@ -26,18 +25,17 @@ class BasePlayListItem(models.Model):
 
 
 class PlayListItem(BasePlayListItem):
+    playlist = models.ForeignKey(PlayList, related_name='items')
     author = models.ForeignKey(settings.AUTH_USER_MODEL)
 
 
 class UserPlayList(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
     created = models.DateTimeField(auto_now_add=True)
+    playlist = models.ForeignKey(PlayList, related_name="+")
 
-
-class UserPlayListItem(models.Model):
-    pl_item = models.ForeignKey(PlayListItem)
+class UserPlayListItem(BasePlayListItem):
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
-    created = models.DateTimeField(auto_now_add=True)
 
 
 class Genre(models.Model):
