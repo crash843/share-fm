@@ -13,4 +13,9 @@ module.exports = {
       actionType: constants.action_types.UPDATE_USER_PLAYLIST,
       user_playlist: user_playlist
     })
+  update_search_results: (tracks) ->
+    dispatcher.handleServerAction({
+      actionType: constants.action_types.UPDATE_SEARCH_RESULTS,
+      tracks: tracks
+    })
 }

@@ -4,22 +4,34 @@ constants = require("../constants/constants")
 _ = require('lodash')
 
 
-_search_results = []
+_search_results = {
+  status: "done",
+  results: []
+}
 
-load_playlist = (data)->
-  _playlist = data
+load_search_results = (data) ->
+  console.log("LOADING SEARCH RESULTS")
+  _search_results.results = data
+  _search_results.status = "done"
 
-PlaylistStore = _.extend({}, EventEmitter.prototype, {
-  get_playlist: ->
-    _playlist
+  console.log(_search_results)
+
+start_searching = () ->
+  _search_results.status = "inprogress"
+
+SearchResultsStore = _.extend({}, EventEmitter.prototype, {
+  get_search_results: ->
+    _search_results
 })
 
 dispatcher.register((payload) ->
   switch payload.action.actionType
-    when constants.UPDATE_PLAYLIST then load_playlist(payload.action.playlist)
+    when constants.action_types.UPDATE_SEARCH_RESULTS then load_search_results(payload.action.tracks)
+    when constants.action_types.SEARCH then start_searching()
 
-  PlaylistStore.emit("change")
+  console.log("EMIT CHANGE")
+  SearchResultsStore.emit("change")
   true
 )
 
-module.exports = PlaylistStore
+module.exports = SearchResultsStore
